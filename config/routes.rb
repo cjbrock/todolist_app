@@ -2,8 +2,6 @@ TodolistApp::Application.routes.draw do
   resources :tasks
   resources :lists
 
-  get "/list/new" => 'list#new'
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
