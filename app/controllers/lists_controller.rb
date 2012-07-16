@@ -19,10 +19,14 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(params[:list])
-
     respond_to do |format|
-        format.html { redirect_to @list, notice: 'List was successfully created.' }
+      if @list.save
+        format.html { redirect_to action: :index, notice: 'New List has been created.' }
         format.json { render json: @list, status: :created, location: @list }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @list.errors, status: :unprocessable_entity }
+      end
     end
   end
 

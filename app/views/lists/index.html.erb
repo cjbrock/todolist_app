@@ -10,11 +10,11 @@
   <tr>
     <td><%= list.name %></td>
     <td><%= list.created_at.strftime("%D") %></td>
-    <td><%= link_to 'Add Tasks', task_create_path %></td>
+    <td><%= link_to 'Add Tasks', new_task_path %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New List', list_new_path %>
+<%= link_to 'New List', new_list_path %>
