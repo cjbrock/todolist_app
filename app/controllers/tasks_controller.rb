@@ -4,7 +4,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @lists }
+      format.json { render json: @tasks }
     end
   end
 
@@ -18,9 +18,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(params[:list])
+    @task = Task.new(params[:task])
     respond_to do |format|
-      if @list.save
+      if @task.save
         format.html { redirect_to action: :index, notice: 'New task has been created.' }
         format.json { render json: @task, status: :created, location: @task }
       else
