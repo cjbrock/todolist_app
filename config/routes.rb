@@ -1,18 +1,9 @@
 TodolistApp::Application.routes.draw do
-  resources :task
-  resources :list
+  resources :tasks
+  resources :lists
 
-  get "task/new"
+  get "/list/new" => 'list#new'
 
-  get "task/create"
-
-  get "task/index"
-
-  get "list/new"
-
-  get "list/create"
-
-  get "list/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
