@@ -9,7 +9,7 @@
 <% @lists.each do |list| %>
   <tr>
     <td><%= list.name %></td>
-    <td><%= list.created_at %></td>
+    <td><%= list.created_at.strftime("%D") %></td>
     <td><%= link_to 'Add Tasks', task_create_path %></td>
   </tr>
 <% end %>
