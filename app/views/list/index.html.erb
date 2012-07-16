@@ -1,0 +1,20 @@
+<h1>Existing Lists</h1>
+<table>
+  <tr>
+    <th>List Name</th>
+    <th>Date Created</th>
+    <th></th>
+  </tr>
+
+<% @lists.each do |list| %>
+  <tr>
+    <td><%= list.name %></td>
+    <td><%= list.created_at %></td>
+    <td><%= link_to 'Add Tasks', task_create_path %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New List', list_new_path %>
