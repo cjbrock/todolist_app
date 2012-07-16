@@ -1,4 +1,7 @@
 TodolistApp::Application.routes.draw do
+  resources :task
+  resources :list
+
   get "task/new"
 
   get "task/create"
